@@ -19,7 +19,7 @@ int ft_mod(int a, int b);
 
 int ft_sum(int a, int b);
 
-int ft_mult(int a, int b);
+int ft_power(int a);
 
 int ft_sub(int a, int b);
 
