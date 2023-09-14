@@ -16,5 +16,6 @@ int main ()
         ft_putstr("Temperature is hot");
     else 
         ft_putstr("Temperature is very hot");
+    free(numchar);
     return 0;
 }

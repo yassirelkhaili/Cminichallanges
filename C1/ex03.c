@@ -2,8 +2,8 @@
 
 int main ()
 {
-    char *a;
-    char *b;
+    char *a = NULL;
+    char *b = NULL;
     ft_putstr("Enter num a:");
     if(ft_malloc(&a))
         return 1;
@@ -16,5 +16,7 @@ int main ()
     ft_putstr("a % b = ");
     ft_putnbr(ft_mod(ft_atoi(a), ft_atoi(b)));
     write(1, "\n", 1);
+    free(a);
+    free(b);
     return 0;
 }
