@@ -10,8 +10,11 @@ int main ()
     ft_putstr("Enter num b:");
     if(ft_malloc(&b))
         return 1;
-    ft_putstr("a divided by b is: \n");
+    ft_putstr("a / b = ");
     ft_putnbr(ft_div(ft_atoi(a), ft_atoi(b)));
+    write(1, "\n", 1);
+    ft_putstr("a % b = ");
     ft_putnbr(ft_mod(ft_atoi(a), ft_atoi(b)));
+    write(1, "\n", 1);
     return 0;
 }

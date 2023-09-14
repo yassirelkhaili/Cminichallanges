@@ -25,4 +25,6 @@ void ft_putnbr(int nbr);
 
 int ft_strlen(char *str);
 
+void ft_putchar(char c);
+
 #endif
