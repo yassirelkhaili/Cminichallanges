@@ -85,14 +85,33 @@ double ft_atof(const char *str)
 
 int ft_div(int a, int b)
 {
-int result = a / b;
-return result;
+return a / b;
 }
 
 int ft_mod(int a, int b)
 {
-int result = a % b;
-return result;
+return a % b;
+}
+
+int ft_sum(int a, int b)
+{
+return a + b;
+}
+
+int ft_mult(int a, int b)
+{
+    return a * b;
+}
+
+int ft_strlen(char *str)
+{
+    int strlen = 0;
+    while (*str)
+    {
+        str++;
+        strlen++;
+    }
+    return strlen;
 }
 
 void ft_putchar(char c)

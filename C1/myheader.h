@@ -17,6 +17,12 @@ int ft_div(int a, int b);
 
 int ft_mod(int a, int b);
 
+int ft_sum(int a, int b);
+
+int ft_mult(int a, int b);
+
 void ft_putnbr(int nbr);
+
+int ft_strlen(char *str);
 
 #endif
