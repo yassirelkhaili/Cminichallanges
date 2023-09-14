@@ -1,1 +1,1 @@
-##Please compile with :'gcc ${name} functions.c'
+##Please compile with :'gcc ${name} myfunctions.c'
