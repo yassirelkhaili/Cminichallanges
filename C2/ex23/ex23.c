@@ -2,25 +2,20 @@
 
 int main ()
 {
-    int index = 1;
-    int index3 = 6;
-    while (index <= 7)
-    {
-        int index4 = index3;
-        while(index4 != 0)
+    int maximum = 0;
+    int sum;
+    int value;
+    do {
+        printf("Enter a number between 1 and 100 or 0 to terminate the program:\n");
+        scanf("%d", &value);
+        if(value >= 1 && value < 100)
         {
-            printf(" ");
-            index4--;
+            sum += value;
+            if(value > maximum)
+                maximum = value;
+            printf("total: %d\n", sum);
+            printf("maximum: %d\n", maximum);
         }
-        int index2 = ((index - 1) * 2) + 1;
-        while(index2 != 0)
-        {
-            printf("*");
-            index2--;
-        }
-        printf("\n");
-        index++;
-        index3--;
-    }
+    } while (value != 0);
     return 0;
 }

@@ -1,25 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    double average;
-
-    printf("Enter the student's average score: ");
-    scanf("%lf", &average);
-
-    if (average < 10) {
-        printf("The student has failed.\n");
-    } else if (average >= 10 && average < 12) {
-        printf("The student has passed with a 'Satisfactory' grade.\n");
-    } else if (average >= 12 && average < 14) {
-        printf("The student has passed with an 'Fairly Good' grade.\n");
-    } else if (average >= 14 && average < 16) {
-        printf("The student has passed with a 'Good' grade.\n");
-    } else if (average >= 16) {
-        printf("The student has passed with a 'Very good' grade.\n");
+    char c;
+    printf("Enter a character: ");
+    scanf(" %c", &c);
+    if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+        if (c >= 97 && c <= 122) {
+            printf("The character is lowecase.\n");
+        } else {
+            printf("The character is uppercase.\n");
+        }
     } else {
-        printf("Invalid input.\n");
+        printf("The character is not an alphabet.\n");
         return 1;
     }
-
     return 0;
 }
