@@ -5,6 +5,7 @@ int main ()
     int numa;
     int numb;
     int numc;
+    int numd;
     int result;
     printf("Enter num1: \n");
     scanf("%d", &numa);
@@ -12,7 +13,10 @@ int main ()
     scanf("%d", &numb);
     printf("Enter num3: \n");
     scanf("%d", &numc);
-    result = (numa + numb + numc) / 3;
+    printf("Enter num4: \n");
+    scanf("%d", &numd);
+    result = (numa + numb + numc + numd) / 3;
     printf("La moyenne est: %d", result);
+    printf("La somme est: %d", (numa + numb + numc + numd));
     return 0;
 }
