@@ -16,6 +16,12 @@ int ft_malloc(char **name)
         (*name)[length] = ch;
         length++;
     }
+    *name = (char *)realloc(*name, (length + 1) * sizeof(char));
+    if (*name == NULL)
+        {
+            ft_putstr("Memory allocation failure");
+            return 1;
+        }
     (*name)[length] = '\0';
     return 0; 
 }
