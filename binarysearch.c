@@ -1,44 +1,50 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-int *bubblesort(int *arr)
+void bubblesort(int *arr, int size)
 {
-    int index = (sizeof(arr) / sizeof(int));
-    int *ptr = arr + index - 1;
-    int *ptrend = arr;
-    while(index--)
+    for (int i = 0; i < size - 1; i++)
     {
-        if(*ptr > *ptrend)
+        for (int j = 0; j < size - i - 1; j++)
         {
-            char temp = *ptr;
-            *ptr = *ptrend;
-            *ptrend = temp;
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
         }
-        ptr++;
-        ptrend--;
     }
-    return arr;
 }
 
-// int binarysearch(int *arr, int target)
-// {
+int binarysearch(int *arr, int target, int start, int end)
+{
+    if (start > end)
+    {
+        printf("Error 404 not found\n");
+        return (-1);
+    }
+    int middle = (start + end) / 2;
+    if(arr[middle] == target)
+    {
+        printf("Target found at index: %d \n", middle);
+        return middle;
+    }
+    if(arr[middle] < target)
+        return binarysearch(arr, target, middle + 1, end);
+    if(arr[middle] > target)
+        return binarysearch(arr, target, start, middle - 1);
+}
 
-// }
-
-
+// types of algorithmes!!
 
 int main ()
 {
     int nums[] = {1, 3, 34, 45, 123, 32, 5, 6, 9, 9};
-    int *sortedarr = bubblesort(nums);
-    // int target = 123;
-    // printf("%d\n", nums[binarysearch(sortedarr, target)]);
-    int *ptr = sortedarr;
-    int index = sizeof(sortedarr) / sizeof(int);
-    while(index--)
-    {
-        printf("%d ", ptr);
-        ptr++;
-    }
+    int index = (sizeof(nums) / sizeof(nums[0]));
+    bubblesort(nums, index);
+    int target = 133;
+    binarysearch(nums, 123, 0, index - 1);
     return 0;
 }

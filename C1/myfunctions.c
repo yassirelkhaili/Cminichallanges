@@ -157,3 +157,38 @@ void	ft_putnbr(int nb)
 	}
 }
 
+void bubblesort(int *arr, int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = 0; j < size - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int binarysearch(int *arr, int target, int start, int end)
+{
+    if (start > end)
+    {
+        printf("Error 404 not found\n");
+        return (-1);
+    }
+    int middle = (start + end) / 2;
+    if(arr[middle] == target)
+    {
+        printf("Target found at index: %d \n", middle);
+        return middle;
+    }
+    if(arr[middle] < target)
+        return binarysearch(arr, target, middle + 1, end);
+    if(arr[middle] > target)
+        return binarysearch(arr, target, start, middle - 1);
+}
+

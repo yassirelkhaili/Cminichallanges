@@ -29,4 +29,8 @@ int ft_strlen(char *str);
 
 void ft_putchar(char c);
 
+void bubblesort(int *arr, int size);
+
+int binarysearch(int *arr, int target, int start, int end);
+
 #endif
