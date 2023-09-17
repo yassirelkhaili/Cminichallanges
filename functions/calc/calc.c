@@ -61,10 +61,10 @@ void arr_menu(int *arr_choice)
 {
      int choice;
     printf("Choose an operation:\n");
-    printf("1. min\n");
-    printf("2. max\n");
-    printf("3. average\n");
-    printf("4. Exit\n");
+    printf("1. Min\n");
+    printf("2. Max\n");
+    printf("3. Average\n");
+    printf("4. Back\n");
     scanf("%d", &choice);
     *arr_choice = choice;
 }
@@ -130,11 +130,6 @@ int main ()
     do {
         int num1;
         int num2;
-        char *string = NULL;
-        int *nums = NULL;
-        int size = 0;
-        int index = 0;
-        int strlen;
         switch (user_choice)
         {
             case 1:
@@ -202,6 +197,11 @@ int main ()
             arr_menu(&arr_choice);
             do
             {
+            char *string = NULL;
+            int *nums = NULL;
+            int size = 0;
+            int index = 0;
+            int strlen = 0;
             switch(arr_choice)
             {
             case 1:
@@ -298,6 +298,9 @@ int main ()
             }
             printf("----End of Operation----\n");
             arr_menu(&arr_choice);
+            break;
+            case 4:
+            get_user_choice(&user_choice);
             break;
             default:
             printf("invalid choice\n");
