@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int ft_div(int a, int b)
 {
@@ -194,110 +195,112 @@ int main ()
             get_user_choice(&user_choice);
             break;
             case 8:
-            arr_menu(&arr_choice);
+            if(arr_choice != 4)
+                arr_menu(&arr_choice);
             do
             {
             char *string = NULL;
             int *nums = NULL;
-            int size = 0;
             int index = 0;
+            int size = 0;
             int strlen = 0;
             switch(arr_choice)
             {
             case 1:
-            printf("Enter a string of numbers:\n");
+            printf("Enter a string of numbers seperated by spaces or charracters:\n");
             getchar();
-            if (ft_malloc(&string) == 0) {
-            int strlen = ft_strlen(string);
-            nums = (int *)malloc(strlen * sizeof(int));
-            while (*string) {
-            int number = 0;
-            while(*string >= 48 && *string <= 57)
+            if (ft_malloc(&string))
             {
-                number = number * 10 + (*string - 48);
-                string++;
+                printf("An error has occurred. Please check your input and try again.\n");
+                return 1;
             }
-            nums[index] = number;
-            index++;
-            if (*string)
-            string++;
+            strlen = ft_strlen(string);
+            nums = (int *)malloc(strlen * sizeof(int));
+            while (*string)
+            {
+                int number = 0;
+                while (*string >= 48 && *string <= 57)
+                {
+                    number = (number * 10) + (*string - 48);
+                    string++;
+                }
+                nums[index] = number;
+                index++;
+                if (*string)
+                    string++;
             }
-            size = sizeof(nums) / sizeof(nums[0]);
-            bubblesort(nums, size);
-            printf("The smallest number is: %d\n", nums[0]);
+            bubblesort(nums, index);
+            printf("The smallest element in the array is: %d\n", nums[0]);
             free(string);
             free(nums);
              printf("----End of Operation----\n");
              arr_menu(&arr_choice);
-            } else {
-            printf("An error has occurred. Please check your input and try again.\n");
-            return 1;
-            }
             break;
             case 2:
-            printf("Enter a string of numbers:\n");
+            printf("Enter a string of numbers seperated by spaces or charracters:\n");
             getchar();
-            if (ft_malloc(&string) == 0) {
-            int strlen = ft_strlen(string);
-            nums = (int *)malloc(strlen * sizeof(int));
-           while (*string) {
-            int number = 0;
-            while(*string >= 48 && *string <= 57)
+            if (ft_malloc(&string))
             {
-                number = number * 10 + (*string - 48);
-                string++;
+                printf("An error has occurred. Please check your input and try again.\n");
+                return 1;
             }
-            nums[index] = number;
-            index++;
-            if (*string)
-            string++;
+            strlen = ft_strlen(string);
+            nums = (int *)malloc(strlen * sizeof(int));
+            while (*string)
+            {
+                int number = 0;
+                while (*string >= 48 && *string <= 57)
+                {
+                    number = (number * 10) + (*string - 48);
+                    string++;
+                }
+                nums[index] = number;
+                index++;
+                if (*string)
+                    string++;
             }
-            size = sizeof(nums) / sizeof(nums[0]);
-            bubblesort(nums, size);
-            printf("%d", nums[3]);
-            printf("The biggest number is: %d\n", nums[size - 1]);
+            bubblesort(nums, index);
+            printf("The biggest element in the array is: %d\n", nums[index - 1]);
             free(string);
             free(nums);
              printf("----End of Operation----\n");
              arr_menu(&arr_choice);
-            } else {
-            printf("An error has occurred. Please check your input and try again.\n");
-            return 1;
-            }
-            printf("----End of Operation----\n");
-            arr_menu(&arr_choice);
             break;
             case 3:
-            printf("Enter a string of numbers:\n");
+            printf("Enter a string of numbers seperated by spaces or charracters:\n");
             getchar();
-            if (ft_malloc(&string) == 0) {
-            int strlen = ft_strlen(string);
-            nums = (int *)malloc(strlen * sizeof(int));
-            while (*string) {
-            int number = 0;
-            while(*string >= 48 && *string <= 57)
+            if (ft_malloc(&string))
             {
-                number = number * 10 + (*string - 48);
-                string++;
+                printf("An error has occurred. Please check your input and try again.\n");
+                return 1;
             }
-            nums[index] = number;
-            index++;
-            if (*string)
-            string++;
+            strlen = ft_strlen(string);
+            nums = (int *)malloc(strlen * sizeof(int));
+            while (*string)
+            {
+                int number = 0;
+                while (*string >= 48 && *string <= 57)
+                {
+                    number = (number * 10) + (*string - 48);
+                    string++;
+                }
+                nums[index] = number;
+                index++;
+                if (*string)
+                    string++;
             }
-            size = sizeof(nums) / sizeof(nums[0]);
-            bubblesort(nums, size);
-            printf("The average number is: %d\n", nums[(size - 1) / 2]);
+            int total = 0;
+            int i = 0;
+            while (i < index)
+            {
+                total += nums[i];
+                i++;
+            }
+            printf("The avarage value of all elements in the array is: %d\n", (total / 2));
             free(string);
             free(nums);
              printf("----End of Operation----\n");
              arr_menu(&arr_choice);
-            } else {
-            printf("An error has occurred. Please check your input and try again.\n");
-            return 1;
-            }
-            printf("----End of Operation----\n");
-            arr_menu(&arr_choice);
             break;
             case 4:
             get_user_choice(&user_choice);
