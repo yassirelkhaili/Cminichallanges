@@ -34,6 +34,20 @@ void ft_putstr(char *str)
     write(1, "\n", 1);
 }
 
+void putarr(int *nums, int size)
+{
+     int index = 0;
+    ft_putstr("Array = {");
+    while (index < size)
+    {
+        ft_putnbr(nums[index]);
+        if(index != size - 1)
+        ft_putstr(", ");
+        index++;
+    }
+    ft_putstr("}");
+}
+
 int ft_atoi(char *str)
 {
     int sign = 1;
