@@ -207,7 +207,7 @@ int main ()
             switch(arr_choice)
             {
             case 1:
-            printf("Enter a string of numbers seperated by spaces or charracters:\n");
+            printf("Enter a string of numbers seperated by spaces and/or charracters:\n");
             getchar();
             if (ft_malloc(&string))
             {
@@ -237,7 +237,7 @@ int main ()
              arr_menu(&arr_choice);
             break;
             case 2:
-            printf("Enter a string of numbers seperated by spaces or charracters:\n");
+            printf("Enter a string of numbers seperated by spaces and/or charracters:\n");
             getchar();
             if (ft_malloc(&string))
             {
@@ -267,7 +267,7 @@ int main ()
              arr_menu(&arr_choice);
             break;
             case 3:
-            printf("Enter a string of numbers seperated by spaces or charracters:\n");
+            printf("Enter a string of numbers seperated by spaces and/or charracters:\n");
             getchar();
             if (ft_malloc(&string))
             {
