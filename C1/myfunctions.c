@@ -58,6 +58,18 @@ void putarr(int *nums, int size)
     ft_putstr("}");
 }
 
+char *ft_strcpy(char *dest, char *src)
+{
+    while(*src)
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';
+    return dest;
+}
+
 int ft_atoi(char *str)
 {
     int sign = 1;

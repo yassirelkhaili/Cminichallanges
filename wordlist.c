@@ -46,6 +46,18 @@ int ft_strcmp(char *s1, char*s2)
     return (*s1 - *s2);
 }
 
+char *ft_strcpy(char *dest, char *src)
+{
+    while(*src)
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';
+    return dest;
+}
+
 void get_user_choice(int *user_choice)
 {
     int choice;
@@ -67,7 +79,7 @@ void get_user_choice(int *user_choice)
 int main ()
 {
     int user_choice;
-    int wordcount;
+    int wordcount = 0;
     char *wordlist[] = NULL;
     get_user_choice(&user_choice);
     do
@@ -85,7 +97,23 @@ int main ()
             get_user_choice(&user_choice);
             break;
             case 2:
-
+            char *str = NULL;
+            char **wordlist = (char **)realloc(wordlist, (wordcount + 1) * sizeof(char *));
+            printf("Enter the word:\n");
+            if(ft_malloc(&str))
+            {
+                perror("Mem alloc error check input");
+                exit(EXIT_FAILURE);
+            }
+            ft_strcpy(wordlist[wordcount], str);
+            wordlist = (char **)realloc(wordlist, (wordcount + 1) * sizeof(char *));
+            if (wordlist == NULL)
+            {
+                perror("Mem alloc error check input");
+                exit(EXIT_FAILURE);
+            }
+            wordlist[wordcount + 1] = '\0';
+            wordcount++;
             get_user_choice(&user_choice);
             break;
             case 3:

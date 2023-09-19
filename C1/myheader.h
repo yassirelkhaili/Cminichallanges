@@ -35,4 +35,6 @@ int binarysearch(int *arr, int target, int start, int end);
 
 int ft_strcmp(char *s1, char*s2);
 
+char *ft_strcpy(char *dest, char *src);
+
 #endif
