@@ -33,4 +33,6 @@ void bubblesort(int *arr, int size);
 
 int binarysearch(int *arr, int target, int start, int end);
 
+int ft_strcmp(char *s1, char*s2);
+
 #endif
